@@ -1,16 +1,16 @@
 package main
 
 import (
+	"bufio"
 	"context"
 	"encoding/json"
 	"fmt"
 	"log"
 	"os"
-  "bufio"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/bedrockruntime"
-  "github.com/aws/aws-sdk-go-v2/service/bedrockruntime/types"
+	"github.com/aws/aws-sdk-go-v2/service/bedrockruntime/types"
 	"github.com/go-micah/go-bedrock/providers"
 )
 
@@ -72,7 +72,7 @@ func main() {
 			StopSequences: []string{},
 		}
 
-    bodyString, err := json.Marshal(body)
+		bodyString, err := json.Marshal(body)
 		if err != nil {
 			log.Fatalf("unable to marshal body: %v", err)
 		}
